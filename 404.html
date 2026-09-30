@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Logistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .error-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px;
+      text-align: center;
+      background: radial-gradient(circle at 50% 20%, rgba(255, 94, 20, 0.08) 0%, rgba(251, 250, 248, 1) 70%);
+      box-sizing: border-box;
+    }
+
+    .error-brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      margin-bottom: 24px;
+    }
+
+    .error-code {
+      font-size: clamp(80px, 14vw, 150px);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--bg-dark);
+      letter-spacing: -0.04em;
+      position: relative;
+      display: inline-block;
+    }
+
+    .error-code span {
+      color: var(--accent-orange);
+    }
+
+    .error-icon-box {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .error-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      max-width: 860px;
+      width: 100%;
+      margin: 40px auto 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 404 MAIN AREA -->
+  <main class="error-container">
+    <div class="container" style="max-width: 900px;">
+      
+      <!-- Brand Logo Link -->
+      <a href="index.html" class="error-brand">
+        <img src="images/logo.webp" alt="Stackly" class="brand-logo-img">
+        <div class="brand-text">
+          <span class="brand-name">Stackly</span>
+          <span class="brand-tag">Logistics</span>
+        </div>
+      </a>
+
+      <div class="error-icon-box">📦</div>
+      
+      <div class="error-code">4<span>0</span>4</div>
+      
+      <h1 class="section-title" style="font-size: clamp(26px, 4vw, 38px); margin-top: 10px;">
+        Cargo Lost in Transit
+      </h1>
+      
+      <p class="safe-paragraph" style="max-width: 580px; margin: 16px auto 0;">
+        The requested destination, route manifest, or page was not found or has been rerouted to our central hub.
+      </p>
+
+      <div class="btn-wrapper" style="margin-top: 30px;">
+        <div class="button-hover-bg"></div>
+        <a href="index.html" class="primary-button orange">
+          <div class="button-content">
+            <div>Return to Home Hub</div>
+            <svg class="primary-button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+          </div>
+        </a>
+      </div>
+
+      
+
+    </div>
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

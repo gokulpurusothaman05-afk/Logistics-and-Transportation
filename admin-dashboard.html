@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Logistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body class="dashboard-body">
+
+  <div class="dashboard-layout">
+    
+    <!-- ADMIN SIDEBAR -->
+    <aside class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="sidebar-brand">
+          <img src="images/logo.webp" alt="Stackly" class="brand-logo-img">
+          <span>Stackly</span>
+        </a>
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <span class="sidebar-role-badge">ADMIN</span>
+          <button class="btn-sidebar-close" aria-label="Close navigation menu">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18"></line>
+              <line x1="6" y1="6" x2="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-category">Command Center</div>
+        <button class="nav-item-btn active" data-target="section-overview">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          <span>Overview & KPI</span>
+        </button>
+        <button class="nav-item-btn" data-target="section-shipments">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+          <span>All Shipments</span>
+        </button>
+        <button class="nav-item-btn" data-target="section-fleet">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="3" width="15" height="13"></rect><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"></polygon><circle cx="5.5" cy="18.5" r="2.5"></circle><circle cx="18.5" cy="18.5" r="2.5"></circle></svg>
+          <span>Fleet & Drivers</span>
+        </button>
+        <button class="nav-item-btn" data-target="section-warehouses">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+          <span>Global Hubs</span>
+        </button>
+
+        <div class="sidebar-category">Operations</div>
+        <button class="nav-item-btn" data-target="section-financials">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+          <span>Financials & Invoices</span>
+        </button>
+        <button class="nav-item-btn" data-target="section-support">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
+          <span>Support Desk</span>
+        </button>
+        <button class="nav-item-btn" data-target="section-settings">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          <span>System Settings</span>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="user-mini-card">
+          <div class="user-avatar-circle dynamic-user-avatar">A</div>
+          <div class="user-mini-meta">
+            <div class="user-mini-name dynamic-user-name">admin.stackly</div>
+            <div class="user-mini-email dynamic-user-email">admin.stackly@gmail.com</div>
+          </div>
+        </div>
+        <button class="btn-logout" title="Sign Out">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN DASHBOARD CONTENT AREA -->
+    <main class="dashboard-main">
+      
+      <!-- TOPBAR -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="btn-sidebar-toggle" aria-label="Toggle Sidebar">☰</button>
+          <h1 class="topbar-page-title">Overview & KPI Command</h1>
+        </div>
+
+        
+      </header>
+
+      <div class="dashboard-content-area">
+        
+        <!-- SECTION 1: OVERVIEW & KPI -->
+        <section id="section-overview" class="dashboard-section active">
+          
+          <!-- Greeting Banner -->
+          <div class="greeting-banner" style="background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-dark-surface) 100%); color: #fff;">
+            <div>
+              <span style="font-size: 12px; font-weight: 700; color: var(--accent-orange); text-transform: uppercase;">Central Dispatch Controller</span>
+              <h2 style="color: #fff; font-size: 26px; margin-top: 4px;">Welcome back, <span class="dynamic-user-name" style="color: var(--accent-orange);">admin.stackly</span>!</h2>
+              <p style="color: #b0b3c5; font-size: 14px; margin-top: 4px;">All regional cargo hubs, carrier satellites, and telemetry networks are operating at 100% nominal capacity.</p>
+            </div>
+            <div style="display: flex; gap: 12px;">
+              <a href="quote.html" class="primary-button orange" style="padding: 10px 22px; font-size: 14px;">+ Dispatch Shipment</a>
+            </div>
+          </div>
+
+          <!-- KPI Cards Grid -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-info">
+                <h4>Active Shipments</h4>
+                <div class="kpi-value">1,482</div>
+                <div class="kpi-trend positive">▲ +12% from yesterday</div>
+              </div>
+              <div class="kpi-icon-box">📦</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-info">
+                <h4>Monthly Revenue</h4>
+                <div class="kpi-value">₹8,42,95,000</div>
+                <div class="kpi-trend positive">▲ +18.4% month-over-month</div>
+              </div>
+              <div class="kpi-icon-box">💰</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-info">
+                <h4>Fleet Utilization</h4>
+                <div class="kpi-value">94.2%</div>
+                <div class="kpi-trend positive">4,239 Active Vehicles</div>
+              </div>
+              <div class="kpi-icon-box">🚛</div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-info">
+                <h4>On-Time SLA</h4>
+                <div class="kpi-value">99.4%</div>
+                <div class="kpi-trend positive">Industry Leading</div>
+              </div>
+              <div class="kpi-icon-box">⚡</div>
+            </div>
+          </div>
+
+          <!-- Revenue & Volume Chart -->
+          <div class="table-card">
+            <div class="table-header">
+              <h3 class="table-title">Global Freight Volume & Revenue Flow (2026)</h3>
+              <span style="font-size: 13px; color: var(--accent-orange); font-weight: 700;">Live Sensor Telemetry</span>
+            </div>
+            <div style="padding: 24px;">
+              <canvas id="revenueChart" style="width: 100%; height: 200px;"></canvas>
+            </div>
+          </div>
+
+          <!-- Recent Shipments Table Preview -->
+          <div class="table-card">
+            <div class="table-header">
+              <h3 class="table-title">Live Dispatch Queue</h3>
+              <div class="table-filters">
+                <select id="shipmentStatusFilter" class="filter-select">
+                  <option value="all">All Statuses</option>
+                  <option value="in-transit">In Transit</option>
+                  <option value="delivered">Delivered</option>
+                  <option value="delayed">Delayed</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tracking ID</th>
+                    <th>Customer (Gmail)</th>
+                    <th>Origin → Destination</th>
+                    <th>Transport Mode</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="shipment-row" data-status="in-transit">
+                    <td><strong>#STK-849201</strong></td>
+                    <td>alex.morris@gmail.com</td>
+                    <td>Mumbai (BOM) → Delhi (DEL)</td>
+                    <td>✈️ Air Boeing 777</td>
+                    <td><span class="status-pill in-transit"><span class="dot"></span> In Transit</span></td>
+                    <td><button class="primary-button outline" style="padding: 4px 10px; font-size: 12px;" onclick="window.location.href='404.html'">Toggle Status</button></td>
+                  </tr>
+                  <tr class="shipment-row" data-status="in-transit">
+                    <td><strong>#STK-772194</strong></td>
+                    <td>sarah.walker@gmail.com</td>
+                    <td>Bengaluru → Electronic City</td>
+                    <td>🚁 Drone Autonomous</td>
+                    <td><span class="status-pill in-transit"><span class="dot"></span> In Transit</span></td>
+                    <td><button class="primary-button outline" style="padding: 4px 10px; font-size: 12px;" onclick="window.location.href='404.html'">Toggle Status</button></td>
+                  </tr>
+                  <tr class="shipment-row" data-status="delivered">
+                    <td><strong>#STK-310492</strong></td>
+                    <td>david.chen@gmail.com</td>
+                    <td>Chennai → Hyderabad Hub</td>
+                    <td>🚛 Heavy Road Haulage</td>
+                    <td><span class="status-pill delivered"><span class="dot"></span> Delivered</span></td>
+                    <td><button class="primary-button outline" style="padding: 4px 10px; font-size: 12px;" onclick="window.location.href='404.html'">Toggle Status</button></td>
+                  </tr>
+                  <tr class="shipment-row" data-status="delayed">
+                    <td><strong>#STK-551029</strong></td>
+                    <td>emma.watson@gmail.com</td>
+                    <td>JNPT Port → Kochi Port Hub</td>
+                    <td>🚢 Maritime Cargo</td>
+                    <td><span class="status-pill delayed"><span class="dot"></span> Delayed</span></td>
+                    <td><button class="primary-button outline" style="padding: 4px 10px; font-size: 12px;" onclick="window.location.href='404.html'">Toggle Status</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- SECTION 2: ALL SHIPMENTS -->
+        <section id="section-shipments" class="dashboard-section">
+          <div class="table-card">
+            <div class="table-header">
+              <h3 class="table-title">Full Multi-Modal Shipment Manifest</h3>
+              <button class="primary-button orange" style="padding: 8px 18px; font-size: 13px;" onclick="window.location.href='404.html'">Export Manifest</button>
+            </div>
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Tracking ID</th>
+                    <th>Shipper Details</th>
+                    <th>Cargo Type & Weight</th>
+                    <th>Route</th>
+                    <th>Status</th>
+                    <th>Telemetry</th>
+                    <th>Manage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="shipment-row" data-status="in-transit">
+                    <td><strong>#STK-901422</strong></td>
+                    <td>robert.frost@gmail.com</td>
+                    <td>Medical Vaccines (450kg)</td>
+                    <td>Kolkata → Ahmedabad</td>
+                    <td><span class="status-pill in-transit"><span class="dot"></span> In Transit</span></td>
+                    <td><span style="color:#10b981; font-weight:700;">-72°C OK</span></td>
+                    <td><button class="primary-button outline" style="padding: 4px 10px; font-size: 12px;" onclick="window.location.href='404.html'">Update</button></td>
+                  </tr>
+                  <tr class="shipment-row" data-status="delivered">
+                    <td><strong>#STK-881200</strong></td>
+                    <td>lisa.kudrow@gmail.com</td>
+                    <td>Solar Inverters (1,200kg)</td>
+                    <td>Pune → Jaipur</td>
+                    <td><span class="status-pill delivered"><span class="dot"></span> Delivered</span></td>
+                    <td><span style="color:#10b981; font-weight:700;">Completed</span></td>
+                    <td><button class="primary-button outline" style="padding: 4px 10px; font-size: 12px;" onclick="window.location.href='404.html'">Update</button></td>
+                  </tr>
+                  <tr class="shipment-row" data-status="in-transit">
+                    <td><strong>#STK-741999</strong></td>
+                    <td>michael.scott@gmail.com</td>
+                    <td>Industrial Paper Rolls (3,400kg)</td>
+                    <td>Surat → Mumbai</td>
+                    <td><span class="status-pill in-transit"><span class="dot"></span> In Transit</span></td>
+                    <td><span style="color:#10b981; font-weight:700;">GPS Locked</span></td>
+                    <td><button class="primary-button outline" style="padding: 4px 10px; font-size: 12px;" onclick="window.location.href='404.html'">Update</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 3: FLEET & DRIVERS -->
+        <section id="section-fleet" class="dashboard-section">
+          <div class="fleet-grid">
+            
+            <div class="fleet-card">
+              <div class="fleet-card-header">
+                <span class="fleet-id">Semi-Truck #STK-TRK-01</span>
+                <span class="status-pill in-transit"><span class="dot"></span> Active</span>
+              </div>
+              <div style="font-size: 14px; color: var(--text-muted);">Assigned Driver: <strong>Mark Vance</strong></div>
+              <div class="fleet-meter">
+                <div class="meter-label"><span>Fuel / Battery:</span><strong>84%</strong></div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 84%;"></div></div>
+              </div>
+              <div style="font-size: 12px; color: var(--text-muted);">Current: NH 48 Northbound (Mile 142)</div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card-header">
+                <span class="fleet-id">Boeing 777-F #STK-AIR-09</span>
+                <span class="status-pill in-transit"><span class="dot"></span> In Flight</span>
+              </div>
+              <div style="font-size: 14px; color: var(--text-muted);">Chief Pilot: <strong>Capt. Elena Rostova</strong></div>
+              <div class="fleet-meter">
+                <div class="meter-label"><span>Aviation Fuel:</span><strong>92%</strong></div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 92%;"></div></div>
+              </div>
+              <div style="font-size: 12px; color: var(--text-muted);">Altitude: 36,000 FT (Cruising)</div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card-header">
+                <span class="fleet-id">Autonomous Drone #DRN-88</span>
+                <span class="status-pill in-transit"><span class="dot"></span> Airborne</span>
+              </div>
+              <div style="font-size: 14px; color: var(--text-muted);">Autonomous AI Autopilot v4.2</div>
+              <div class="fleet-meter">
+                <div class="meter-label"><span>Battery Pack:</span><strong>68%</strong></div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 68%;"></div></div>
+              </div>
+              <div style="font-size: 12px; color: var(--text-muted);">Target: Bengaluru Electronic City Medical Pad</div>
+            </div>
+
+            <div class="fleet-card">
+              <div class="fleet-card-header">
+                <span class="fleet-id">Container Ship #STK-SEA-14</span>
+                <span class="status-pill delivered"><span class="dot"></span> Docked</span>
+              </div>
+              <div style="font-size: 14px; color: var(--text-muted);">Harbor Master: <strong>Lars Lindstrom</strong></div>
+              <div class="fleet-meter">
+                <div class="meter-label"><span>Capacity Slot:</span><strong>98%</strong></div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 98%;"></div></div>
+              </div>
+              <div style="font-size: 12px; color: var(--text-muted);">Port: JNPT Port Berth 4, Mumbai</div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- SECTION 4: GLOBAL HUBS -->
+        <section id="section-warehouses" class="dashboard-section">
+          <div class="table-card">
+            <div class="table-header">
+              <h3 class="table-title">Automated Warehouse Hub Capacities</h3>
+            </div>
+            <div style="padding: 24px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+              <div class="choose-single-item" style="background: #faf8f5;">
+                <h4>Mumbai Central Mega-Hub</h4>
+                <div style="font-size: 24px; font-weight: 800; margin: 8px 0;">82% Full</div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 82%;"></div></div>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">124,000 / 150,000 Pallets Occupied</p>
+              </div>
+
+              <div class="choose-single-item" style="background: #faf8f5;">
+                <h4>Chennai Marine Logistics Dock</h4>
+                <div style="font-size: 24px; font-weight: 800; margin: 8px 0;">64% Full</div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 64%;"></div></div>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">64,000 / 100,000 TEU Storage</p>
+              </div>
+
+              <div class="choose-single-item" style="background: #faf8f5;">
+                <h4>Delhi Air Cargo Logistics Center</h4>
+                <div style="font-size: 24px; font-weight: 800; margin: 8px 0;">91% Full</div>
+                <div class="meter-bar"><div class="meter-fill" style="width: 91%;"></div></div>
+                <p style="font-size: 12px; color: var(--text-muted); margin-top: 8px;">Cold-Chain Bay Operating at Peak</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 5: FINANCIALS -->
+        <section id="section-financials" class="dashboard-section">
+          <div class="table-card">
+            <div class="table-header">
+              <h3 class="table-title">Recent Invoices & Escrow Gateways</h3>
+            </div>
+            <div class="data-table-wrapper">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Invoice ID</th>
+                    <th>Billed Party</th>
+                    <th>Amount</th>
+                    <th>Payment Gateway</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>#INV-2026-901</td>
+                    <td>MetroPharma Group</td>
+                    <td><strong>₹28,45,000.00</strong></td>
+                    <td>Stripe B2B Wire</td>
+                    <td><span class="status-pill delivered">Paid</span></td>
+                  </tr>
+                  <tr>
+                    <td>#INV-2026-902</td>
+                    <td>Disney Supply Logistics</td>
+                    <td><strong>₹14,20,000.00</strong></td>
+                    <td>Direct Escrow</td>
+                    <td><span class="status-pill delivered">Paid</span></td>
+                  </tr>
+                  <tr>
+                    <td>#INV-2026-903</td>
+                    <td>Global Express Consignments</td>
+                    <td><strong>₹6,84,000.00</strong></td>
+                    <td>Razorpay Enterprise</td>
+                    <td><span class="status-pill pending">Pending</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 6: SUPPORT -->
+        <section id="section-support" class="dashboard-section">
+          <div class="table-card">
+            <div class="table-header">
+              <h3 class="table-title">Client Dispatch & Support Inquiries</h3>
+            </div>
+            <div style="padding: 24px; display: flex; flex-direction: column; gap: 16px;">
+              <div class="choose-single-item" style="background: #faf8f5; padding: 16px;">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <strong>Urgent Customs Form Clearance - #STK-849201</strong>
+                  <span class="status-pill pending">High Priority</span>
+                </div>
+                <p style="font-size: 13px; color: var(--text-muted); margin-top: 6px;">From: alex.morris@gmail.com — "Need updated commercial invoice for Delhi customs terminal."</p>
+                <button class="primary-button outline" style="padding: 4px 12px; font-size: 12px; margin-top: 10px;" onclick="window.location.href='404.html'">Resolve Ticket</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 7: SETTINGS -->
+        <section id="section-settings" class="dashboard-section">
+          <div class="form-card">
+            <h3 style="font-size: 22px; margin-bottom: 20px;">System Admin Preferences</h3>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">System Administrator Email</label>
+                <input type="text" class="form-control dynamic-user-email" readonly>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Active Role</label>
+                <input type="text" class="form-control" value="Master Dispatch Admin" readonly>
+              </div>
+            </div>
+            <button class="primary-button orange" style="padding: 10px 24px;" onclick="window.location.href='404.html'">Save Settings</button>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

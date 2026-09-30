@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly Logistics</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar-logo-left">
+    <div class="container">
+      <div class="navbar-wrapper">
+        <a href="index.html" class="navbar-brand">
+          <img src="images/logo.webp" alt="Stackly" class="brand-logo-img">
+          <div class="brand-text">
+            <span class="brand-name">Stackly</span>
+            <span class="brand-tag">Logistics</span>
+          </div>
+        </a>
+
+        <nav class="nav-menu-wrapper">
+          <ul class="nav-menu-two">
+            <li><a href="services.html" class="nav-link">Service</a></li>
+            <li><a href="process.html" class="nav-link">Process</a></li>
+            <li><a href="work.html" class="nav-link">Our work</a></li>
+            <li><a href="about.html" class="nav-link">About</a></li>
+            <li><a href="tracking.html" class="nav-link active">Tracking</a></li>
+            <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+            <li><a href="faq.html" class="nav-link">FAQ</a></li>
+            <li><a href="contact.html" class="nav-link">Contact</a></li>
+          </ul>
+
+          <div class="nav-mobile-actions">
+            <div class="nav-auth-slot">
+              <a href="login.html" class="primary-button reverse-color mobile-login-btn">
+                <div class="button-content">
+                  <div class="button-color color-white">Login</div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </nav>
+
+        <div class="nav-right-content">
+          <div class="desktop-auth-slot">
+            <div class="btn-wrapper">
+              <div class="button-hover-bg"></div>
+              <a href="login.html" class="primary-button reverse-color">
+                <div class="button-content">
+                  <div class="button-color color-white">Login</div>
+                </div>
+              </a>
+            </div>
+          </div>
+          <button class="menu-button" aria-label="Toggle navigation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- INNER HERO -->
+  <section class="inner-page-hero">
+    <div class="container">
+      <div class="breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span class="current">Tracking</span>
+      </div>
+      <h1 class="section-title big">Real-Time Telemetry & Cargo Tracking</h1>
+      <p class="safe-paragraph" style="max-width: 680px; margin: 16px auto 0;">
+        Enter your consignment number or select a live demo tracking ID to view instant satellite GPS updates, climate sensors, and transit progress across India.
+      </p>
+
+      <!-- Tracking Search Box -->
+      <div style="max-width: 640px; margin: 32px auto 0;">
+        <form id="trackingSearchForm" style="display: flex; gap: 10px; background: #fff; padding: 8px; border-radius: var(--radius-full); border: 1px solid var(--border-color); box-shadow: var(--shadow-md);">
+          <input type="text" id="trackInput" placeholder="Enter Tracking ID (e.g. STK-849201)" value="STK-849201" style="flex: 1; padding: 0 20px; font-size: 16px; font-weight: 600;" required>
+          <button type="submit" class="primary-button orange" style="padding: 12px 28px;">
+            <div class="button-content">
+              <div>Track</div>
+              <svg class="primary-button-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+          </button>
+        </form>
+
+        <!-- Quick Demo IDs -->
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 14px; flex-wrap: wrap;">
+          <span style="font-size: 13px; color: var(--text-muted);">Quick Samples:</span>
+          <button class="primary-button outline" style="padding: 4px 12px; font-size: 12px;" onclick="loadTrackingSample('STK-849201', 'Air Freight Express', 'Mumbai (BOM) → Delhi (DEL)', 'In Transit', 70)">#STK-849201</button>
+          <button class="primary-button outline" style="padding: 4px 12px; font-size: 12px;" onclick="loadTrackingSample('STK-772194', 'Autonomous Drone Drop', 'Bengaluru Tech Park → Electronic City Hub', 'Out for Delivery', 90)">#STK-772194</button>
+          <button class="primary-button outline" style="padding: 4px 12px; font-size: 12px;" onclick="loadTrackingSample('STK-310492', 'Intermodal Road Haulage', 'Chennai Port → Hyderabad Mega Hub', 'Delivered', 100)">#STK-310492</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE TRACKING DETAILS CONTAINER -->
+  <section class="safe-reliable-area">
+    <div class="container">
+      <div class="tracker-card" style="max-width: 960px; margin: 0 auto; box-shadow: var(--shadow-lg);">
+        
+        <!-- Header info -->
+        <div style="display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border-color); padding-bottom: 20px; flex-wrap: wrap; gap: 16px;">
+          <div>
+            <span style="font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase;">Tracking Reference</span>
+            <h2 id="displayTrackId" style="font-size: 26px; color: var(--text-dark); margin-top: 4px;">#STK-849201</h2>
+            <div id="displayRoute" style="font-size: 14px; color: var(--text-muted); font-weight: 500;">Mumbai (BOM) → New Delhi (DEL)</div>
+          </div>
+          <div>
+            <span id="displayStatusPill" class="status-pill in-transit" style="font-size: 14px; padding: 6px 16px;">
+              <span class="dot"></span> In Transit
+            </span>
+            <div style="font-size: 12px; color: var(--text-muted); text-align: right; margin-top: 6px;">Estimated ETA: Today, 18:45 IST</div>
+          </div>
+        </div>
+
+        <!-- 5-Step Timeline -->
+        <div class="tracking-timeline">
+          <div class="timeline-step completed">
+            <div class="step-node">✓</div>
+            <div class="step-title">Order Booked</div>
+            <div class="step-time">Oct 24, 08:30</div>
+          </div>
+          <div class="timeline-step completed">
+            <div class="step-node">✓</div>
+            <div class="step-title">Hub Intake</div>
+            <div class="step-time">Oct 24, 11:15</div>
+          </div>
+          <div class="timeline-step active">
+            <div class="step-node">✈️</div>
+            <div class="step-title">In Flight / Transit</div>
+            <div class="step-time">Oct 24, 14:00</div>
+          </div>
+          <div class="timeline-step">
+            <div class="step-node">4</div>
+            <div class="step-title">Customs Cleared</div>
+            <div class="step-time">Pending</div>
+          </div>
+          <div class="timeline-step">
+            <div class="step-node">5</div>
+            <div class="step-title">Delivered</div>
+            <div class="step-time">Pending</div>
+          </div>
+        </div>
+
+        <!-- Sensor & Telemetry Metrics Grid -->
+        <div class="telemetry-metrics-grid">
+          <div class="choose-single-item" style="padding: 16px; background: #faf8f5;">
+            <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">CARGO TYPE</div>
+            <div style="font-weight: 700; font-size: 16px; margin-top: 4px;">Precision Electronics</div>
+          </div>
+          <div class="choose-single-item" style="padding: 16px; background: #faf8f5;">
+            <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">SENSOR TEMP</div>
+            <div style="font-weight: 700; font-size: 16px; margin-top: 4px; color: #10b981;">18.4°C (Normal)</div>
+          </div>
+          <div class="choose-single-item" style="padding: 16px; background: #faf8f5;">
+            <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">DISPATCH VEHICLE</div>
+            <div style="font-weight: 700; font-size: 16px; margin-top: 4px;">Boeing 777-F #SK-902</div>
+          </div>
+          <div class="choose-single-item" style="padding: 16px; background: #faf8f5;">
+            <div style="font-size: 12px; color: var(--text-muted); font-weight: 600;">CURRENT LOCATION</div>
+            <div style="font-weight: 700; font-size: 16px; margin-top: 4px;">En Route: Mumbai-Delhi Air Corridor</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer-area">
+    <div class="container">
+      <div class="footer-top">
+        <a href="index.html" class="navbar-brand">
+          <img src="images/logo.webp" alt="Stackly" class="brand-logo-img">
+          <div class="brand-text"><span class="brand-name">Stackly</span><span class="brand-tag">Logistics</span></div>
+        </a>
+
+        <div class="footer-social-block">
+          <a href="404.html" class="footer-social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
+          </a>
+          <a href="404.html" class="footer-social-link" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+          </a>
+          <a href="404.html" class="footer-social-link" aria-label="LinkedIn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="404.html" class="footer-social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-columns">
+        <div class="footer-about-us">
+          <h2 class="footer-menu-title">Address</h2>
+          <p class="footer-paragraph mb-20">Plot No. 42, Logistics Park, NH 48, Navi Mumbai, Maharashtra 410208, India</p>
+          <a href="contact.html" class="topbar-left-menu">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            <span>Find on Map</span>
+          </a>
+        </div>
+        <div class="footer-nav">
+          <h2 class="footer-menu-title">Explore</h2>
+          <ul class="footer-menu-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="quote.html">Get a quote</a></li>
+            <li><a href="work.html">Case Studies</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h2 class="footer-menu-title">Portals</h2>
+          <ul class="footer-menu-list">
+            <li><a href="login.html">Login Portal</a></li>
+            <li><a href="signup.html">Client Sign Up</a></li>
+            <li><a href="admin-dashboard.html">Admin Dashboard</a></li>
+            <li><a href="client-dashboard.html">Client Dashboard</a></li>
+            <li><a href="tracking.html">Live Tracking</a></li>
+          </ul>
+        </div>
+        <div class="footer-nav">
+          <h2 class="footer-menu-title">Contact</h2>
+          <ul class="footer-menu-list">
+            <li><a href="tel:+919876543210">+91 98765 43210</a></li>
+            <li><a href="mailto:support@stacklylogistics.com">support@stacklylogistics.com</a></li>
+            <li><a href="faq.html">Help & FAQ</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright-content">
+        <div class="copyright-text">Copyright © 2026 Stackly Logistics Inc. | All rights reserved.</div>
+        <div class="copyright-menu">
+          <span class="payment-badge">Stripe</span>
+          <span class="payment-badge">VISA</span>
+          <span class="payment-badge">UPI</span>
+          <span class="payment-badge">MasterCard</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function loadTrackingSample(id, type, route, status, percent) {
+      document.getElementById('trackInput').value = id;
+      document.getElementById('displayTrackId').textContent = '#' + id;
+      document.getElementById('displayRoute').textContent = route;
+      
+      const pill = document.getElementById('displayStatusPill');
+      if (status === 'Delivered') {
+        pill.className = 'status-pill delivered';
+        pill.innerHTML = '<span class="dot"></span> Delivered';
+      } else if (status === 'Out for Delivery') {
+        pill.className = 'status-pill pending';
+        pill.innerHTML = '<span class="dot"></span> Out for Delivery';
+      } else {
+        pill.className = 'status-pill in-transit';
+        pill.innerHTML = '<span class="dot"></span> In Transit';
+      }
+
+      showToast('Loaded telemetry for #' + id, 'success');
+    }
+
+    document.getElementById('trackingSearchForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const val = document.getElementById('trackInput').value.trim();
+      if (val) {
+        document.getElementById('displayTrackId').textContent = '#' + val.toUpperCase();
+        showToast('Found satellite telemetry for #' + val.toUpperCase(), 'success');
+      }
+    });
+  </script>
+</body>
+</html>
+
