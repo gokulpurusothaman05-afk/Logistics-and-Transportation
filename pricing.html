@@ -70,7 +70,10 @@
         <span>/</span>
         <span class="current">Pricing</span>
       </div>
-      <h1 class="section-title big">Simple, Transparent Freight Pricing</h1>
+      <div class="section-title-with-logo">
+        <img src="images/logo.webp" alt="Stackly" class="title-logo">
+        <h1 class="section-title big">Simple, Transparent Freight Pricing</h1>
+      </div>
       <p class="safe-paragraph" style="max-width: 680px; margin: 16px auto 0;">
         No hidden fuel surcharges or unexpected customs handling fees. Choose the tier that matches your shipment volume.
       </p>
@@ -80,65 +83,65 @@
   <!-- PRICING TIERS -->
   <section class="we-provide-area">
     <div class="container">
-      <div class="pricing-grid" style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;">
+      <div class="pricing-grid">
         
         <!-- Tier 1 -->
-        <div class="choose-single-item" style="padding: 40px 30px; background: #ffffff; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <span style="font-size: 13px; font-weight: 700; color: var(--accent-orange); text-transform: uppercase;">Standard Cargo</span>
-            <div style="font-size: 42px; font-weight: 800; margin: 12px 0 6px;">₹95 <span style="font-size: 16px; color: var(--text-muted); font-weight: 500;">/ kg</span></div>
-            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">Ideal for regular commercial pallet deliveries and standard ground/sea transit across India.</p>
+        <div class="pricing-card">
+          <div class="pricing-card-body">
+            <span class="pricing-card-category">Standard Cargo</span>
+            <div class="pricing-price">₹95 <span class="pricing-price-unit">/ kg</span></div>
+            <p class="pricing-card-desc">Ideal for regular commercial pallet deliveries and standard ground/sea transit across India.</p>
             
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: var(--text-dark);">
-              <li>✓ 3-5 Business Days Delivery</li>
-              <li>✓ Standard GPS Telemetry</li>
-              <li>✓ Up to ₹10,00,000 Cargo Insurance</li>
-              <li>✓ Automated GST & Bill of Lading</li>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-feature-check">✓</span> 3-5 Business Days Delivery</li>
+              <li><span class="pricing-feature-check">✓</span> Standard GPS Telemetry</li>
+              <li><span class="pricing-feature-check">✓</span> Up to ₹10,00,000 Cargo Insurance</li>
+              <li><span class="pricing-feature-check">✓</span> Automated GST & Bill of Lading</li>
             </ul>
           </div>
-          <div style="margin-top: 32px;">
-            <a href="quote.html" class="primary-button outline" style="width: 100%; text-align: center;">Choose Standard</a>
+          <div class="pricing-card-footer">
+            <a href="quote.html" class="primary-button outline">Choose Standard</a>
           </div>
         </div>
 
         <!-- Tier 2 (Featured) -->
-        <div class="choose-single-item" style="padding: 40px 30px; background: var(--bg-dark); color: #ffffff; border: 2px solid var(--accent-orange); display: flex; flex-direction: column; justify-content: space-between; transform: translateY(-10px); box-shadow: var(--shadow-lg);">
-          <div>
-            <div style="display: flex; justify-content: space-between; align-items: center;">
-              <span style="font-size: 13px; font-weight: 700; color: var(--accent-orange); text-transform: uppercase;">Priority Express</span>
-              <span style="background: var(--accent-orange); color: #fff; font-size: 11px; padding: 2px 8px; border-radius: 4px; font-weight: 700;">POPULAR</span>
+        <div class="pricing-card featured">
+          <div class="pricing-card-body">
+            <div class="pricing-card-badge-row">
+              <span class="pricing-card-category">Priority Express</span>
+              <span class="pricing-badge">POPULAR</span>
             </div>
-            <div style="font-size: 42px; font-weight: 800; margin: 12px 0 6px; color: #fff;">₹280 <span style="font-size: 16px; color: #a2a5b8; font-weight: 500;">/ kg</span></div>
-            <p style="color: #a2a5b8; font-size: 14px; margin-bottom: 24px;">High-speed air freight and expedited customs priority for time-critical commercial cargo.</p>
+            <div class="pricing-price">₹280 <span class="pricing-price-unit">/ kg</span></div>
+            <p class="pricing-card-desc">High-speed air freight and expedited customs priority for time-critical commercial cargo.</p>
             
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: #e1e3ed;">
-              <li>✓ 24-48 Hours Express Aviation</li>
-              <li>✓ Live Temperature & Humidity Sensor</li>
-              <li>✓ Up to ₹50,00,000 Cargo Insurance</li>
-              <li>✓ Dedicated 24/7 Account Dispatcher</li>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-feature-check">✓</span> 24-48 Hours Express Aviation</li>
+              <li><span class="pricing-feature-check">✓</span> Live Temperature & Humidity Sensor</li>
+              <li><span class="pricing-feature-check">✓</span> Up to ₹50,00,000 Cargo Insurance</li>
+              <li><span class="pricing-feature-check">✓</span> Dedicated 24/7 Account Dispatcher</li>
             </ul>
           </div>
-          <div style="margin-top: 32px;">
-            <a href="quote.html" class="primary-button orange" style="width: 100%; text-align: center;">Choose Express</a>
+          <div class="pricing-card-footer">
+            <a href="quote.html" class="primary-button orange">Choose Express</a>
           </div>
         </div>
 
         <!-- Tier 3 -->
-        <div class="choose-single-item" style="padding: 40px 30px; background: #ffffff; border: 1px solid var(--border-color); display: flex; flex-direction: column; justify-content: space-between;">
-          <div>
-            <span style="font-size: 13px; font-weight: 700; color: var(--accent-orange); text-transform: uppercase;">Enterprise Charter</span>
-            <div style="font-size: 42px; font-weight: 800; margin: 12px 0 6px;">Custom <span style="font-size: 16px; color: var(--text-muted); font-weight: 500;">Rates</span></div>
-            <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 24px;">Full vessel/plane charters, dedicated automated warehouses, and API integration.</p>
+        <div class="pricing-card">
+          <div class="pricing-card-body">
+            <span class="pricing-card-category">Enterprise Charter</span>
+            <div class="pricing-price">Custom <span class="pricing-price-unit">Rates</span></div>
+            <p class="pricing-card-desc">Full vessel/plane charters, dedicated automated warehouses, and API integration.</p>
             
-            <ul style="display: flex; flex-direction: column; gap: 12px; font-size: 14px; color: var(--text-dark);">
-              <li>✓ Dedicated Fleet & Plane Charters</li>
-              <li>✓ Autonomous Drone Last-Mile Routing</li>
-              <li>✓ Full Custom API & ERP Integration</li>
-              <li>✓ Comprehensive Full-Value Insurance</li>
+            <ul class="pricing-features-list">
+              <li><span class="pricing-feature-check">✓</span> Dedicated Fleet & Plane Charters</li>
+              <li><span class="pricing-feature-check">✓</span> Autonomous Drone Last-Mile Routing</li>
+              <li><span class="pricing-feature-check">✓</span> Full Custom API & ERP Integration</li>
+              <li><span class="pricing-feature-check">✓</span> Comprehensive Full-Value Insurance</li>
             </ul>
           </div>
-          <div style="margin-top: 32px;">
-            <a href="contact.html" class="primary-button outline" style="width: 100%; text-align: center;">Contact Enterprise</a>
+          <div class="pricing-card-footer">
+            <a href="contact.html" class="primary-button outline">Contact Enterprise</a>
           </div>
         </div>
 
